@@ -19,10 +19,10 @@ class CreateDestinationsTable extends Migration
             
             $table->unsignedBigInteger('destinationtype_id');
             $table->string('title');
-            $table->string('description');
-            $table->string('nation');
-            $table->string('city');
-            $table->string('image');
+            $table->string('description')->nullable;
+            $table->string('nation')->nullable;
+            $table->string('city')->nullable;
+            $table->string('image')->nullable;
             $table->timestamps();
 
             $table->index('destinationtype_id');

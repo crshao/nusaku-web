@@ -13,6 +13,7 @@ class CreateDestinationUserPivotTable extends Migration
      */
     public function up()
     {
+        //Bookmark table(user bookmarks destination)
         Schema::create('destination_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
