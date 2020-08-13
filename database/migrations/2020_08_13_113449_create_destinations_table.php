@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDestinationtypesTable extends Migration
+class CreateDestinationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,19 @@ class CreateDestinationtypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('destinationtypes', function (Blueprint $table) {
+        Schema::create('destinations', function (Blueprint $table) {
             
-            $table->increments('destinationtype_id'); // $table->id();
-
+            $table->increments('destination_id'); // $table->id();
+            
+            $table->unsignedBigInteger('destinationtype_id');
             $table->string('title');
+            $table->string('description');
+            $table->string('nation');
+            $table->string('city');
             $table->string('image');
             $table->timestamps();
+
+            $table->index('destinationtype_id');
         });
     }
 
@@ -30,6 +36,6 @@ class CreateDestinationtypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('destinationtypes');
+        Schema::dropIfExists('destinations');
     }
 }

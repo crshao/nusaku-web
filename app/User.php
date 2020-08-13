@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //setiap user dapat men-bookmark banyak destination
+    public function bookmark()
+    {
+        return $this->belongsToMany(Destination::class);
+    }
 }
