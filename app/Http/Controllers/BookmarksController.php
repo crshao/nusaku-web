@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class BookmarksController extends Controller
 {
-    public function store()
+    public function store() //????????????????
     {
-
+        return ;
     }
 }
